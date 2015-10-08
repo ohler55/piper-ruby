@@ -3,7 +3,7 @@ require 'date'
 require File.join(File.dirname(__FILE__), 'lib/piper/version')
 
 Gem::Specification.new do |s|
-  s.name = "piper"
+  s.name = "piper-ruby"
   s.version = ::Piper::VERSION
   s.authors = "Peter Ohler"
   s.date = Date.today.to_s
@@ -21,5 +21,5 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = ['README.md']
   s.rdoc_options = ['--main', 'README.md']
   
-  s.rubyforge_project = 'piper-push-ruby'
+  s.rubyforge_project = 'piper-ruby'
 end
