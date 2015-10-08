@@ -3,3 +3,6 @@
 ^c^d hide subtree
 ^c^s show subtree
 
+- create API for Piper::Client or Piper::Manager
+
+- create race sample
