@@ -22,6 +22,10 @@ method is used to deliver log messages to Piper.
 
 ## Release Notes
 
+### Release 1.1.1 - November 13, 2015
+
+ - Corrected default log location to be the caller instead of the log class file.
+
 ### Release 1.1.0 - November 12, 2015
 
  - Added support for publishing to Piper.

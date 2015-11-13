@@ -39,7 +39,8 @@ module Piper
       end
       @who = @@who
       if where.nil?
-        @where = "#{File.basename(__FILE__)}:#{__LINE__}"
+        loc = caller_locations(2,1)[0]
+        @where = "#{File.basename(loc.path)}:#{loc.lineno}"
       else
         @where = where
       end
