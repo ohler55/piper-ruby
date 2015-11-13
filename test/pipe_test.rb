@@ -8,6 +8,7 @@ $: << File.join(File.dirname(File.dirname(File.expand_path(__FILE__))), 'lib')
 require 'minitest'
 require 'minitest/autorun'
 require 'piper'
+require 'oj'
 
 $verbose = true
 
@@ -53,6 +54,15 @@ class PipeTest < Minitest::Test
     puts " GET /#{iron['id']} response: #{resp.code} - #{resp.body}" if $verbose
     assert_equal(404, resp.code.to_i, 'expected a 404 when getting iron after delete')
     
+    puts man.log(2, "what happens?")
+    resp = man.get('foobar')
+    puts " GET /foobar response: #{resp.code} - #{resp.body}"
+
+    rid = man.info("Done with test.")
+    resp = man.get(rid);
+    puts " GET /#{rid} response: #{resp.code} - #{resp.body}" if $verbose
+    assert_equal(202, resp.code.to_i, 'expected a 202 when getting #{rid} after logging')
+
   end
 
 end

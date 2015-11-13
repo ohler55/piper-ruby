@@ -1,4 +1,5 @@
 # piper-push-ruby
+
 A Ruby management client to push JSON to [Piper Push Cache](http://www.piperpushcache.com/index.html).
 
 [Piper Push Cache](http://www.piperpushcache.com/index.html). is a websocket
@@ -11,3 +12,25 @@ Piper Push Ruby is a thin client that can be used to push JSON to
 [Piper](http://www.piperpushcache.com/index.html). Raw JSON can be pushed to
 Piper or Ruby Objects can be pushed and [Oj](http://www.ohler.com/oj) will be
 used to convert those Objects into JSON using the compat mode.
+
+Piper Push Cache has special support for log messages. This gem provides methods
+for sending those log messages to Piper.
+
+This Piper client support publishing on [NATS](http://nats.io) as a means of
+delivery if the NATS gem is installed. A flag is also provided to control which
+method is used to deliver log messages to Piper.
+
+## Release Notes
+
+### Release 1.1.0 - November 12, 2015
+
+ - Added support for publishing to Piper.
+
+ - Added support for sending log records to Piper.
+
+### Release 1.0.0 - October 8, 2015
+
+ - Initial release
+
+
+
