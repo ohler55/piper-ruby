@@ -22,6 +22,10 @@ method is used to deliver log messages to Piper.
 
 ## Release Notes
 
+### Release 1.1.2 - December 9, 2015
+
+ - Removed an extranious 'z' character in the where field.
+
 ### Release 1.1.1 - November 13, 2015
 
  - Corrected default log location to be the caller instead of the log class file.
