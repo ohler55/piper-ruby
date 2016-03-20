@@ -20,7 +20,15 @@ This Piper client support publishing on [NATS](http://nats.io) as a means of
 delivery if the NATS gem is installed. A flag is also provided to control which
 method is used to deliver log messages to Piper.
 
+The Piper::Actor module provides methods for receiving and responding to
+JSON messages from tasks in the Piper process flows. The test/simple_actor.rb provides
+an example of how to use the Piper::Actor module functions.
+
 ## Release Notes
+
+### Release 1.2.0 - March 20, 2016
+
+ - Added the Piper::Actor module to support the Piper Push Cache process flows.
 
 ### Release 1.1.2 - December 9, 2015
 

@@ -5,3 +5,4 @@ end # Piper
 require 'piper/version'
 require 'piper/manager'
 require 'piper/logrec'
+require 'piper/actor'
