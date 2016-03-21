@@ -26,6 +26,10 @@ an example of how to use the Piper::Actor module functions.
 
 ## Release Notes
 
+### Release 1.2.1 - March 20, 2016
+
+ - Added rescue for Interrupt to avoid error message on shutdown with control C.
+
 ### Release 1.2.0 - March 20, 2016
 
  - Added the Piper::Actor module to support the Piper Push Cache process flows.

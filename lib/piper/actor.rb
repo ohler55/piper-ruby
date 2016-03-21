@@ -18,15 +18,19 @@ module Piper
     # Starts a JSON processing loop that reads from $stdin. The proc provided
     # with the call should call ship() to continue on with the processing.
     def self.process()
-      Oj::load($stdin, :mode => :strict) { |json|
-        begin
-          id = json['id']
-          rec = json['rec']
-          yield(id, rec)
-        rescue Exception => e
-          ship(id, { 'kind' => 'Error', 'message' => e.message, 'class' => e.class.to_s }, 'error')
-        end
-      }
+      begin
+        Oj::load($stdin, :mode => :strict) { |json|
+          begin
+            id = json['id']
+            rec = json['rec']
+            yield(id, rec)
+          rescue Exception => e
+            ship(id, { 'kind' => 'Error', 'message' => e.message, 'class' => e.class.to_s }, 'error')
+          end
+        }
+      rescue Interrupt
+        # ^C or parent went away
+      end
     end
 
     # Ships or sends a response to the calling task in the Piper Flow.
